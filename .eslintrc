@@ -1,0 +1,311 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/base"
+  ],
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "arca",
+    "align-assignments"
+  ],
+  "overrides": [
+    {
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "files": [
+        "**/*.ts"
+      ],
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "no-unused-vars": [
+          "off"
+        ]
+      }
+    },
+    {
+      "plugins": [
+        "eslint-plugin-vue"
+      ],
+      "files": [
+        "**/*.vue"
+      ],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": "babel-eslint",
+        "allowImportExportEverywhere": true,
+        "sourceType": "module",
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+          "globalReturn": false,
+          "impliedStrict": false,
+          "jsx": false
+        }
+      },
+      "rules": {
+        "vue/attribute-hyphenation": 0,
+        "vue/html-quotes": 0,
+        "vue/html-self-closing": [
+          "error",
+          {
+            "html": {
+              "void": "never",
+              "normal": "never",
+              "component": "always"
+            },
+            "svg": "always",
+            "math": "always"
+          }
+        ],
+        "vue/attributes-order": [
+          2,
+          {
+            "order": [
+              "CONDITIONALS",
+              "LIST_RENDERING",
+              "RENDER_MODIFIERS",
+              "GLOBAL",
+              "UNIQUE",
+              "BINDING",
+              "OTHER_ATTR",
+              "EVENTS",
+              "CONTENT",
+              "DEFINITION",
+              "CLASS"
+            ]
+          }
+        ],
+        "vue/order-in-components": [
+          "error",
+          {
+            "order": [
+              "el",
+              "name",
+              "parent",
+              "functional",
+              [
+                "delimiters",
+                "comments"
+              ],
+              [
+                "components",
+                "directives",
+                "filters"
+              ],
+              "extends",
+              "mixins",
+              "inheritAttrs",
+              "model",
+              "fetch",
+              "head",
+              [
+                "props",
+                "propsData"
+              ],
+              "data",
+              "computed",
+              "watch",
+              "LIFECYCLE_HOOKS",
+              "methods",
+              [
+                "template",
+                "render"
+              ],
+              "renderError"
+            ]
+          }
+        ],
+        "vue/no-dupe-keys": 2,
+        "vue/require-default-prop": 0,
+        "vue/max-attributes-per-line": [
+          2,
+          {
+            "singleline": 3,
+            "multiline": {
+              "max": 3,
+              "allowFirstLine": true
+            }
+          }
+        ],
+        "vue/prop-name-casing": 0,
+        "vue/html-indent": [
+          "error",
+          4,
+          {
+            "attribute": 1,
+            "closeBracket": 0,
+            "alignAttributesVertically": true,
+            "ignores": []
+          }
+        ],
+        "vue/this-in-template": [
+          "error",
+          "never"
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "align-assignments/align-assignments": [
+      2,
+      {
+        "requiresOnly": false
+      }
+    ],
+    "arca/curly": 2,
+    "arca/import-align": 2,
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
+    "no-new-wrappers": "error",
+    "comma-dangle": [
+      "error",
+      {
+        "imports": "never",
+        "exports": "never",
+        "objects": "only-multiline"
+      }
+    ],
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "never"
+    ],
+    "space-in-parens": [
+      "error",
+      "never"
+    ],
+    "no-nested-ternary": "error",
+    "no-unneeded-ternary": "error",
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "padded-blocks": [
+      "error",
+      "never"
+    ],
+    "eqeqeq": "warn",
+    "prefer-const": "error",
+    "operator-linebreak": [
+      "error",
+      "before"
+    ],
+    "no-iterator": "error",
+    "no-duplicate-imports": "error",
+    "no-useless-constructor": "error",
+    "implicit-arrow-linebreak": [
+      "error",
+      "beside"
+    ],
+    "prefer-spread": "error",
+    "no-loop-func": "error",
+    "no-new-func": "error",
+    "prefer-rest-params": "error",
+    "arrow-spacing": "error",
+    "func-style": [
+      "error",
+      "expression"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "max-len": [
+      0,
+      {
+        "tabWidth": 2
+      }
+    ],
+    "object-shorthand": [
+      "error",
+      "always"
+    ],
+    "quote-props": [
+      "error",
+      "as-needed"
+    ],
+    "no-new-object": "error",
+    "no-self-assign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-redeclare": "error",
+    "no-lonely-if": "error",
+    "no-multiple-empty-lines": [
+      1,
+      {
+        "max": 1
+      }
+    ],
+    "new-parens": "error",
+    "block-spacing": "error",
+    "no-const-assign": "error",
+    "no-this-before-super": "warn",
+    "no-reserved-keys": 0,
+    "no-undef": "warn",
+    "no-unused-vars": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "semi": [
+      "error",
+      "always",
+      {
+        "omitLastInOneLineBlock": true
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "singleline-html-element-content-newline": 0,
+    "no-extra-semi": "error",
+    "callback-return": "error",
+    "no-constant-condition": "error",
+    "no-unreachable": "error",
+    "no-dupe-keys": "error",
+    "no-dupe-class-members": "error",
+    "key-spacing": [
+      1,
+      {
+        "singleLine": {
+          "beforeColon": true,
+          "afterColon": true
+        },
+        "multiLine": {
+          "align": "colon"
+        }
+      }
+    ]
+  }
+}
