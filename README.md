@@ -1,5 +1,3 @@
-# carwash
-
 ## Project setup
 ```
 npm install
